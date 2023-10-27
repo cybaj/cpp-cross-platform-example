@@ -1,0 +1,14 @@
+build/
+
+.ccls-cache/
+.vscode/
+*.swp
+*.swo
+*.pyc
+*.pyo
+*.exe
+*.dll
+*.so
+*.dylib
+*.dll.a
+*.dll.lib
