@@ -35,6 +35,7 @@ void MyStandaloneUELibrary::MyLibraryClass::PlatformFunction()
 void MyStandaloneUELibrary::MyLibraryClass::WindowsFunction()
 {
     OutputDebugString(_T("Hello World from Windows!\n"));
+    std::wcout << L"Hello World from Windows!" << std::endl;
 }
 
 #elif defined(__APPLE__) && TARGET_OS_MAC
