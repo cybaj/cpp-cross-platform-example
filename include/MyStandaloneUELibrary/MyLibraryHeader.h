@@ -12,7 +12,7 @@
 #endif
 
 // FIX: temporary workaround
-#define TARGET_OS_MAC 0
+#define TARGET_OS_MAC 1
 #define TARGET_OS_IPHONE 0
 
 namespace MyStandaloneUELibrary
@@ -28,7 +28,7 @@ namespace MyStandaloneUELibrary
         #if defined(_WIN32)
         void WindowsFunction();
         #elif defined(__APPLE__) && TARGET_OS_MAC
-        void MacFunction();
+        void MacOSFunction();
         #elif defined(__APPLE__) && TARGET_OS_IPHONE
         void iOSFunction();
         #elif defined(__ANDROID__)

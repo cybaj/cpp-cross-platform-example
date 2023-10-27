@@ -1,4 +1,5 @@
 build/
+end-test/simple-test/build/
 
 .ccls-cache/
 .vscode/

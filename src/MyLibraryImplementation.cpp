@@ -1,4 +1,16 @@
 #include "MyStandaloneUELibrary/MyLibraryHeader.h"
+#include <iostream>
+
+#if defined(_WIN32)
+#include <Windows.h>
+#elif defined(__APPLE__)
+#include <TargetConditionals.h>
+#if TARGET_OS_IPHONE
+#include <Foundation/Foundation.h>
+#endif
+#elif defined(__ANDROID__)
+#include <android/log.h>
+#endif
 
 void MyStandaloneUELibrary::MyLibraryClass::MyFunction()
 {
@@ -10,7 +22,7 @@ void MyStandaloneUELibrary::MyLibraryClass::PlatformFunction()
     #if defined(_WIN32)
     WindowsFunction();
     #elif defined(__APPLE__) && TARGET_OS_MAC
-    MacFunction();
+    MacOSFunction();
     #elif defined(__APPLE__) && TARGET_OS_IPHONE
     iOSFunction();
     #elif defined(__ANDROID__)
@@ -21,25 +33,25 @@ void MyStandaloneUELibrary::MyLibraryClass::PlatformFunction()
 #if defined(_WIN32)
 void MyStandaloneUELibrary::MyLibraryClass::WindowsFunction()
 {
-    // Windows-specific code here...
+    OutputDebugString(L"Hello World from Windows!\n");
 }
 
-
 #elif defined(__APPLE__) && TARGET_OS_MAC
-void MyStandaloneUELibrary::MyLibraryClass::MacFunction()
+void MyStandaloneUELibrary::MyLibraryClass::MacOSFunction()
 {
-    // Mac-specific code here...
+    printf("Hello World from macOS!\n");
 }
 
 #elif defined(__APPLE__) && TARGET_OS_IPHONE
 void MyStandaloneUELibrary::MyLibraryClass::iOSFunction()
 {
-    // iOS-specific code here...
+    NSLog(@"Hello World from iOS!");
 }
 
 #elif defined(__ANDROID__)
 void MyStandaloneUELibrary::MyLibraryClass::AndroidFunction()
 {
-    // Android-specific code here...
+    __android_log_print(ANDROID_LOG_INFO, "MyStandaloneUELibrary", "Hello World from Android!");
 }
 #endif
+
