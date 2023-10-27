@@ -1,6 +1,7 @@
 build/
 end-test/simple-test/build/
 
+.DS_Store
 .ccls-cache/
 .vscode/
 *.swp
