@@ -34,7 +34,7 @@ void MyStandaloneUELibrary::MyLibraryClass::PlatformFunction()
 #if defined(_WIN32)
 void MyStandaloneUELibrary::MyLibraryClass::WindowsFunction()
 {
-    OutputDebugString(_T"Hello World from Windows!\n");
+    OutputDebugString(_T("Hello World from Windows!\n"));
 }
 
 #elif defined(__APPLE__) && TARGET_OS_MAC
